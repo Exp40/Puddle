@@ -9,7 +9,8 @@ def name_upper(name):
     name = name_compiler
     return name
 
-
+def running():
+    run_game = True
 
 def random_choice_from_list(phrase_list):
     rand_index = random.randint(0, (len(phrase_list)-1)) #Chooses a random number between 1 and the length of the file being input. The minus one is to make sure it doesn't overflow
@@ -50,3 +51,14 @@ def respond(self, human_text):
             return self.keyword_and_response[word_holder] #Returns the response to the hot word.
     else:
         return self.default_response #Returns a default
+
+def select_speaker(speaker, speech):
+    processed_speech = f"{speaker}: {speech}"
+    return
+
+def value_flipper(bools):
+    if bools:
+        bools = False
+    if not bools:
+        bools = True
+    return bools

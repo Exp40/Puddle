@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2de5f958-9abd-4a99-b1fe-d42d844aceae" name="Changes" comment="Added PyQt6">
-      <change afterPath="$PROJECT_DIR$/BTS.py" afterDir="false" />
+    <list default="true" id="2de5f958-9abd-4a99-b1fe-d42d844aceae" name="Changes" comment="Started building the GUI and presentation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Response_text" beforeDir="false" afterPath="$PROJECT_DIR$/Response_text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Responses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/BTS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,12 +75,21 @@
       <option name="project" value="LOCAL" />
       <updated>1712289105953</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started building the GUI and presentation.">
+      <option name="closed" value="true" />
+      <created>1712340104102</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712340104102</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created project files" />
     <MESSAGE value="Started working on the opening of the game and name upper." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started working on the opening of the game and name upper." />
+    <MESSAGE value="Started building the GUI and presentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started building the GUI and presentation." />
   </component>
 </project>
