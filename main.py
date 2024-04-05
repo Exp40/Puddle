@@ -6,11 +6,9 @@ from PyQt6.QtCore import *
 
 
 def main():
-    puddle_response = 1
-    chat_log = ""
-    running = True
     app = QApplication([])  # Create the application
-    figure = BTS.Form
+
+    figure = BTS.Puddle()
     figure.show()
     app.exec()
 
