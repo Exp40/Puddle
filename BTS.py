@@ -1,5 +1,6 @@
 import string, sys, time, random
 from PyQt6.QtWidgets import *
+from PyQt6.QtCore import *
 def name_upper(name):
     name_fixer = [firstL for firstL in name]
     name_fixer[0] = name_fixer[0].upper()
@@ -56,9 +57,76 @@ def select_speaker(speaker, speech):
     processed_speech = f"{speaker}: {speech}"
     return
 
-def value_flipper(bools):
-    if bools:
-        bools = False
-    if not bools:
-        bools = True
-    return bools
+def converse(speech):
+    response_timer = QTimer()
+
+    changed = speech.setText("")
+    response_timer.setInterval(1000)
+    response_timer.start()
+    return changed
+class Puddle(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        self.label = QLabel("Starting...")
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        self.setLayout(layout)
+
+        self.counter = 0
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_label)
+        self.timer.start(1000)  # Update label every 1 second
+        self.window = QWidget()
+        self.top_window = QWidget()  # Creates the windows to put things into
+        self.bottom_window = QWidget()
+
+        layout = QVBoxLayout()
+        top_layout = QHBoxLayout()
+        bottom_layout = QVBoxLayout()
+
+        self.window.setLayout(layout)
+        self.top_window.setLayout(top_layout)
+        self.bottom_window.setLayout(bottom_layout)
+
+        cancel_button = QPushButton()
+        puddle_speech = QLabel()
+        speech_box = QLineEdit(self.bottom_window)
+        top_layout.addWidget(cancel_button)
+        top_layout.addWidget(puddle_speech)
+        bottom_layout.addWidget(speech_box)
+        layout.addLayout(top_layout)
+        layout.addLayout(bottom_layout)
+
+        # Add the physical response element
+
+        layout.addWidget(self.top_window)
+        layout.addWidget(self.bottom_window)
+
+        response_timer = QTimer()
+
+        self.window.resize(600, 400)
+
+    def update_label(self):
+        self.label.setText(f"Counter: {self.counter}")
+        self.counter += 1
+
+class Form(QDialog):
+
+    def __init__(self, parent=None):
+        super(Form, self).__init__(parent)
+        # Create widgets
+        self.edit = QLineEdit("")
+        self.button = QPushButton("Respond")
+        # Create layout and add widgets
+        layout = QVBoxLayout()
+        layout.addWidget(self.edit)
+        layout.addWidget(self.button)
+        # Set dialog layout
+        self.setLayout(layout)
+        # Add button signal to greetings slot
+        self.button.clicked.connect(self.greetings)
+
+    # Greets the user
+    def greetings(self):
+        print(f"Hello {self.edit.text()}")
